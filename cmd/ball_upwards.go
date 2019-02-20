@@ -14,3 +14,41 @@ Notes
 Remember to convert the velocity from km/h to m/s or from m/s in km/h when necessary.
 The maximum height recorded by the device is not necessarily the maximum height reached by the ball.
 */
+
+package main
+
+import("fmt")
+
+// h = v*t - 0.5*g*t*t
+// v = (h + 0.5*g*t*t) / t
+// Vy = V0 sin(θ) - g t
+
+// convert km/hr to m/s
+func meter_second(velocity int) float64 {
+    converted_velocity := float64(velocity)
+    converted_velocity = converted_velocity / 360 // seconds
+    converted_velocity = converted_velocity * 100 // meters
+    return converted_velocity
+}
+
+func time_of_flight(v float64) float64 {
+    var g float64 = 9.8
+    var time float64 = 0
+    var t float64 = 0.1
+
+    // time ball is going up
+    for v>= 0 {
+        time += t
+        v = v - g*t
+        fmt.Println(v,t)
+    }
+    return time
+}
+
+func main() {
+    var velocity int = 25 // in km/hr
+
+    converted_velocity := meter_second(velocity)
+    tof := time_of_flight(converted_velocity)
+    fmt.Println(tof)
+}
