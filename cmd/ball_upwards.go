@@ -27,7 +27,7 @@ import("fmt")
 func meter_second(velocity int) float64 {
     converted_velocity := float64(velocity)
     converted_velocity = converted_velocity / 360 // seconds
-    converted_velocity = converted_velocity * 100 // meters
+    converted_velocity = converted_velocity * 1000 // meters
     return converted_velocity
 }
 
@@ -42,7 +42,7 @@ func time_of_flight(v float64) float64 {
         v = v - g*t
         fmt.Println(v,t)
     }
-    return time
+    return time-0.1
 }
 
 func main() {
@@ -51,4 +51,5 @@ func main() {
     converted_velocity := meter_second(velocity)
     tof := time_of_flight(converted_velocity)
     fmt.Println(tof)
+    fmt.Println(0.1*70)
 }
