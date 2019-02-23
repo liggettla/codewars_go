@@ -33,16 +33,17 @@ func meter_second(velocity int) float64 {
 
 func time_of_flight(v float64) float64 {
     var g float64 = 9.8
-    var time float64 = 0
     var t float64 = 0.1
+    var count int = 0
 
     // time ball is going up
     for v>= 0 {
-        time += t
+        count += 1
         v = v - g*t
-        fmt.Println(v,t)
     }
-    return time-0.1
+    t = t * float64(count)
+    fmt.Println(count)
+    return t
 }
 
 func main() {
@@ -51,5 +52,4 @@ func main() {
     converted_velocity := meter_second(velocity)
     tof := time_of_flight(converted_velocity)
     fmt.Println(tof)
-    fmt.Println(0.1*70)
 }
