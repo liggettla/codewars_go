@@ -17,7 +17,7 @@ The maximum height recorded by the device is not necessarily the maximum height 
 
 package main
 
-import("fmt")
+import("fmt";"math")
 
 // h = v*t - 0.5*g*t*t
 // v = (h + 0.5*g*t*t) / t
@@ -51,5 +51,5 @@ func main() {
 
     converted_velocity := meter_second(velocity)
     tof := time_of_flight(converted_velocity)
-    fmt.Println(tof)
+    fmt.Println(math.Round(tof))
 }
