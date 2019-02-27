@@ -38,6 +38,14 @@ func compare_strings(str1 []string, str2[]string) int {
     return count
 }
 
+func array_combinations(a []string) {
+    combinations := []string
+}
+
+type Tuple struct {
+    a, b int
+}
+
 // returns the percent conserved chars
 func PosAverage(s string) []string {
     return strings.Split(s, ", ")
