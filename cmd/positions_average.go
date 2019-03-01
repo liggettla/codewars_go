@@ -39,7 +39,7 @@ func compare_strings(str1 []string, str2[]string) int {
 }
 
 func array_combinations(a []string) {
-    combinations := []string
+    combinations := []Tuple
 }
 
 type Tuple struct {
