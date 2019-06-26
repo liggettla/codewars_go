@@ -60,6 +60,22 @@ func HeapPermutation(a []int, size int) {
 	}
 }
 
+// tests if a passed string is palindromic
+func IsPalindrome(num string) bool {
+    up := num[0:len(num)/2]
+    down := num[len(num)-len(num)/2:len(num)]
+
+    // reverse down
+    down = StrRev(down)
+
+    if up == down {
+        return true
+    } else {
+        return false
+    }
+
+}
+
 // non-recursive heap's algorithm
 /*
 procedure generate(n : integer, A : array of any):
